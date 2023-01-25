@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { FormControl, Input, Button, Center } from '@chakra-ui/react'
 
 import { setQuery } from '@/utils/cookies'
 
 import searchImages from '@/utils/searchImages';
 
-// import { ImageState as ImageProps } from '@/app/page';
+interface SearchFormProps {
+  setImages: React.Dispatch<React.SetStateAction<any[]>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  setHasMore: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+function SearchForm({setImages, setPage, setHasMore}: SearchFormProps) {
 
-function SearchForm({setImages, setPage, setHasMore}:any) {
-
-    const handleSubmit = async (e: React.FormEvent<HTMLInputElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLInputElement>) => {
         e.preventDefault();
 
         setPage(1)
@@ -24,7 +27,7 @@ function SearchForm({setImages, setPage, setHasMore}:any) {
 
     }
 
-    const handleChange = (e: React.FormEvent<HTMLInputElement>) => setQuery(e.currentTarget.value);
+    const handleChange = (e: FormEvent<HTMLInputElement>) => setQuery(e.currentTarget.value);
 
     return (
         <div>
@@ -39,4 +42,4 @@ function SearchForm({setImages, setPage, setHasMore}:any) {
     )
 }
 
-export default SearchForm
+export default SearchForm;
