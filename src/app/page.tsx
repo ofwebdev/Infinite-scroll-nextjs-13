@@ -61,7 +61,7 @@ export default function Home() {
   return (
 
     <ChakraProvider>
-      <main>
+      <main style={{padding: "16px"}}>
         <section className="search-section">
           <Header />
           <SearchForm {...searchFormImgProps} />
