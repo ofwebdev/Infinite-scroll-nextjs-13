@@ -71,10 +71,9 @@ export default function Home() {
             setImages,
             setPage,
             setHasMore,
-          })}
-            dataLength={images.length}
-            hasMore={hasMore}
-            loader={<Loader />} >
+           })} loader={<Loader />} >
+
+            
             <SearchResultImg images={images} />
           </InfiniteScroll>
 
