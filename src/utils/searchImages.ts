@@ -15,7 +15,7 @@ const searchImages = async (props: SearchImagesProps) => {
   if (!query) return [];
 
   const { data } = await axios.get("/api/getPhotos/", {
-    params: { query, page: 1 },
+    params: { query, page },
   });
 
   setPage((prev) => prev + 1);

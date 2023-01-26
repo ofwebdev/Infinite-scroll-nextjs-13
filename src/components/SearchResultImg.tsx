@@ -5,7 +5,6 @@ import { nanoid } from 'nanoid';
 import Masonry from 'react-masonry-css';
 
 
-
 function SearchResultImg({ images }: any) {
 
     const breakpointColumnsObj = {
@@ -44,3 +43,4 @@ function SearchResultImg({ images }: any) {
 }
 
 export default SearchResultImg
+
